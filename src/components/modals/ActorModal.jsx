@@ -11,10 +11,10 @@ export default function ActorModal({ visible, onClose }) {
 
   const handleSubmit = async (data) => {
     setBusy(true);
-    const { actor, error } = await createActor(data);
+    const { error } = await createActor(data);
     setBusy(false);
     if (error) return updateNotification("error", error);
-    updateNotification("success", "Actor Uploaded Sucessfully");
+    updateNotification("success", "Actor Uploaded Successfully");
     onClose();
   };
   return (
